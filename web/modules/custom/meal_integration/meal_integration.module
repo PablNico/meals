@@ -2,15 +2,21 @@
 
 function meal_integration_theme($existing, $type, $theme, $path) {
   return [
-    'meal_integration_theme_hook' => [
-      'render element' => 'children',
-      'template' => 'categories-links' ,
+    'categories' => [
       'variables' => [
         'categories' => [],
+      ],
+    ],
+    'meals_by_categories' => [
+      'variables' => [
         'meals' => [],
+      ],
+    ],
+    'meal_details' => [
+      'variables' => [
         'mealDetails' => [],
       ],
-    ]
+    ],
   ];
 
 }

@@ -1,0 +1,5 @@
+<ul>
+  {% for meal in meals %}
+    <li><a href="/meal/{{ meal.idMeal }}">{{ meal.strMeal }}</a></li>
+  {% endfor %}
+</ul>

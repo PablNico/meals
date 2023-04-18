@@ -1,0 +1,8 @@
+<ul>
+  {% for category in categories %}
+    <li>
+      <a href="/category/{{ category.strCategory }}"> {{ category.strCategory }} <a/>
+        <img src="{{ category.strCategoryThumb }}">
+    </li>
+  {% endfor %}
+</ul>

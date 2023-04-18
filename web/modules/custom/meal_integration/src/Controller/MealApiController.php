@@ -18,7 +18,7 @@ class MealApiController extends ControllerBase {
   public function categories() {
     $categories = \Drupal::service('meal_integration.service')->getAllCategories();
     return [
-      '#theme' => 'meal_integration_theme_hook',
+      '#theme' => 'categories',
       '#categories' => $categories
     ];
   }
@@ -26,7 +26,7 @@ class MealApiController extends ControllerBase {
   public function mealsByCategories($category) {
     $meals = \Drupal::service('meal_integration.service')->getMealsByCategory($category);
     return [
-      '#theme' => 'meal_integration_theme_hook',
+      '#theme' => 'meals_by_categories',
       '#meals' => $meals
     ];
   }
@@ -34,7 +34,7 @@ class MealApiController extends ControllerBase {
   public function mealDetailsById($mealId) {
     $mealDetails = \Drupal::service('meal_integration.service')->getMealDetailsById($mealId);
     return [
-      '#theme' => 'meal_integration_theme_hook',
+      '#theme' => 'meal_details',
       '#mealDetails' => $mealDetails
     ];
   }
