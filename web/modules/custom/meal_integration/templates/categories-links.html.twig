@@ -1,0 +1,29 @@
+
+<ul>
+  {% for category in categories %}
+    <li>
+      <a href="/category/{{ category.strCategory }}"> {{ category.strCategory }} <a/>
+      <img src="{{ category.strCategoryThumb }}">
+    </li>
+  {% endfor %}
+</ul>
+
+
+<ul>
+  {% for meal in meals %}
+    <li><a href="/meal/{{ meal.idMeal }}">{{ meal.strMeal }}</a></li>
+  {% endfor %}
+</ul>
+
+<h3>{{ mealDetails.strMeal }}</h3>
+<ul>
+  <li>{{ mealDetails.strCategory }}</li>
+  <li>{{ mealDetails.strArea }}</li>
+</ul>
+
+<img src="{{ mealDetails.strMealThumb }}">
+<p>
+  {{ mealDetails.strInstructions }}
+</p>
+
+{{ dump(mealDetails) }}

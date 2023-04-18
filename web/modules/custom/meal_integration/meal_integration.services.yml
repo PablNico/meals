@@ -1,0 +1,10 @@
+services:
+  logger.channel.meal_integration:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['meal_integration']
+  meal_integration.service:
+    class: Drupal\meal_integration\Services\MealApiService
+    arguments:
+      - '@config.factory'
+      - '@logger.channel.meal_integration'

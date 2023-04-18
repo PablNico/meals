@@ -1,0 +1,39 @@
+system.meal_integration:
+  path: '/admin/meal_integration'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Meal DB API'
+  requirements:
+    _role: 'administrator'
+
+meal_integration.settings:
+  path: '/admin/meal_integration/settings'
+  defaults:
+    _form: '\Drupal\meal_integration\Form\MealApiSettingsForm'
+    _title: 'MealDB Settings'
+  requirements:
+    _role: 'administrator'
+
+meal_integration.categories:
+  path: '/categories'
+  defaults:
+    _controller: '\Drupal\meal_integration\Controller\MealApiController::categories'
+    _title: 'Categories'
+  requirements:
+    _permission: 'access content'
+
+meal_integration.mealsByCategory:
+  path: '/category/{category}'
+  defaults:
+    _controller: '\Drupal\meal_integration\Controller\MealApiController::mealsByCategories'
+    _title: 'Meals'
+  requirements:
+    _permission: 'access content'
+
+meal_integration.mealsById:
+  path: '/meal/{mealId}'
+  defaults:
+    _controller: '\Drupal\meal_integration\Controller\MealApiController::mealDetailsById'
+    _title: 'Meal Details'
+  requirements:
+    _permission: 'access content'

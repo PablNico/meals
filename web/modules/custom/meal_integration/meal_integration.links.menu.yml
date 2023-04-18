@@ -1,0 +1,11 @@
+system.meal_integration:
+  title: 'MealDB API Integration'
+  description: 'MealDB Intregation links page'
+  parent: system.admin
+  route_name: system.meal_integration
+
+meal_integration.settings:
+  title: 'MealDB API Integration'
+  description: 'Settings page for MealDB API'
+  parent: system.meal_integration
+  route_name: 'meal_integration.settings'
